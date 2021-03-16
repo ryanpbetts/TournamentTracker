@@ -18,7 +18,8 @@ namespace TrackerLibrary
             }
             if (textFiles)
             {
-                // to do something
+                TextConnection text = new TextConnection();
+                Connections.Add(text);
             }
         }
     }
