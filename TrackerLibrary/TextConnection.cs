@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TrackerLibrary
+﻿namespace TrackerLibrary
 {
-    public class TextConnection : IDataConnection
+    internal class TextConnection
     {
-        public PrizeModel CreatePrize(PrizeModel model)
-        {
-            model.Id = 1;
-
-            return model;
-        }
     }
 }
