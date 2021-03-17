@@ -35,11 +35,8 @@ namespace TrackerUI
                     prizeAmountValue.Text, 
                     prizeAmountValue.Text);
 
-                foreach (IDataConnection db in GlobalConfig.Connections)
-                {
-                    db.CreatePrize(model);
-                }
-
+                    GlobalConfig.Connection.CreatePrize(model);
+                
                 placeNameValue.Text = "";
                 placeNumberValue.Text= "";
                 prizeAmountValue.Text = "0";
@@ -94,6 +91,11 @@ namespace TrackerUI
             }
 
             return output;
+        }
+
+        private void createPrizeForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

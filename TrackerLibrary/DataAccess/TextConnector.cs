@@ -11,9 +11,7 @@ namespace TrackerLibrary.DataAccess
     {
         public PrizeModel CreatePrize(PrizeModel model)
         {
-            model.Id = 1;
 
-            return model;
         }
     }
 }
