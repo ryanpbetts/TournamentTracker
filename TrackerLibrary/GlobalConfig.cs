@@ -10,6 +10,8 @@ namespace TrackerLibrary
 {
     public static class GlobalConfig
     {
+        private static int db;
+
         public static IDataConnection Connection { get; private set; }
 
         public static void InitializeConnections(DatabaseType db)
@@ -28,7 +30,7 @@ namespace TrackerLibrary
 
         public static string CnnString(string name)
         {
-            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+            return ConfigurationManager.ConnectionStrings["Tournaments"].ConnectionString;
         }
     }
 }

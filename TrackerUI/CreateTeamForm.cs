@@ -35,11 +35,16 @@ namespace TrackerUI
         }
         private void WireUpLists()
         {
+            selectTeamMemberDropDown.DataSource = null;
+
             selectTeamMemberDropDown.DataSource = availableTeamMembers;
             selectTeamMemberDropDown.DisplayMember = "FullName";
 
+            teamMembersListBox.DataSource = null;
+
             teamMembersListBox.DataSource = selectedTeamMembers;
             teamMembersListBox.DisplayMember = "FullName";
+
         }
 
         private void createMemberButton_Click(object sender, EventArgs e)
@@ -90,6 +95,16 @@ namespace TrackerUI
             }
 
             return true;
+        }
+
+        private void addMemberButton_Click(object sender, EventArgs e)
+        {
+            PersonModel p = (PersonModel)selectTeamMemberDropDown.SelectedItem;
+
+            availableTeamMembers.Remove(p);
+            selectedTeamMembers.Add(p);
+
+            //WireUpLists();
         }
     }
 }
